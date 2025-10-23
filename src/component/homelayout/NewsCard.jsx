@@ -1,9 +1,10 @@
 import { FaEye, FaShareAlt, FaBookmark, FaStar } from 'react-icons/fa';
 import { IoBookmarksOutline } from 'react-icons/io5';
+import { Link } from 'react-router';
 
 
 const NewsCard = ({ news }) => {
-	const { title, rating, total_view, author, thumbnail_url, details, tags } =
+	const { title, rating, total_view, author, thumbnail_url, details, tags, id } =
 		news;
 
 	const formattedDate = new Date(news.author.published_date).toLocaleDateString(
@@ -52,9 +53,12 @@ const NewsCard = ({ news }) => {
 			<div className="p-4 text-gray-700 text-sm">
 				<p>
 					{details.slice(0, 200)}...
-					<span className="text-orange-500 font-medium cursor-pointer hover:underline">
+					<Link
+						to={`/news-details/${id}`}
+						className="text-orange-500 font-medium cursor-pointer hover:underline"
+					>
 						Read More
-					</span>
+					</Link>
 				</p>
 
 				{/* Tags */}

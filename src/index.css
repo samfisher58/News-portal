@@ -27,6 +27,5 @@
 a.active {
 	@apply bg-base-300;
 	@apply text-black;
-  @apply font-semibold
-
+    @apply font-semibold
 }
